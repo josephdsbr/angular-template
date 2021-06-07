@@ -22,7 +22,7 @@ import {GlobalErrorHandler} from "./exception/handlers/global-error-handler";
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     PagesModule,

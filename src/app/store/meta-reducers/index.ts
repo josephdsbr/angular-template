@@ -13,4 +13,8 @@ export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionRedu
   })(reducer);
 }
 
-export const metaReducers: Array<MetaReducer<AppState, any>> = [localStorageSyncReducer];
+export const metaReducers: Array<MetaReducer<AppState, any>> = [];
+
+if (typeof window !== "undefined") {
+  metaReducers.push(localStorageSyncReducer);
+}
