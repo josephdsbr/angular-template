@@ -5,7 +5,8 @@ import * as authActions from './auth.actions';
 
 export const authInitialState: AuthState = {
   signed: false,
-  token: ''
+  token: '',
+  name: ''
 };
 
 export const AuthReducer = createReducer(
@@ -14,6 +15,7 @@ export const AuthReducer = createReducer(
     produce(state, (draft) => {
       draft.token = user.token;
       draft.signed = !!user.token;
+      draft.name = user.name;
     })
   ),
   on(authActions.AuthSignOut, () => authInitialState)

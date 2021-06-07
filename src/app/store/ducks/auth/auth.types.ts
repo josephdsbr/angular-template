@@ -1,6 +1,7 @@
 export default interface AuthState {
   signed: boolean;
   token: string;
+  name: string;
 }
 
 export enum AuthActionsType {
